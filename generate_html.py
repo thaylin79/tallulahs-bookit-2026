@@ -206,7 +206,7 @@ html_doc = f"""<!DOCTYPE html>
 </head>
 <body>
 <header>
-  <h1>🌞 Good job on this summer's reading! 🏖️</h1>
+  <h1>🌞 Good job on this summer's reading, Tallulah! 🏖️</h1>
   <p class="subtitle">Here's what you've done this summer</p>
   <div class="stats">
     <div class="stat">
