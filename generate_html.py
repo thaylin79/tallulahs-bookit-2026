@@ -236,7 +236,7 @@ html_doc = f"""<!DOCTYPE html>
 </html>
 """
 
-with open("checkouts.html", "w") as f:
+with open("index.html", "w") as f:
     f.write(html_doc)
 
-print("Wrote checkouts.html with", len(rows), "books")
+print("Wrote index.html with", len(rows), "books")
