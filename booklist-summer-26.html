@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer Reading Wrap-Up!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sun: #ffb703;
+    --sky: #4cc9f0;
+    --coral: #ff6b6b;
+    --leaf: #2ec4b6;
+    --grape: #7b2cbf;
+    --ink: #26324a;
+    --card-bg: #ffffff;
+    --border: #ffe066;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(180deg, #bde0fe 0%, #caf0f8 35%, #fff3bf 100%);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+  header {
+    padding: 2.5rem 1.5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h1 {
+    font-family: "Baloo 2", "Nunito", sans-serif;
+    font-weight: 800;
+    margin: 0 0 0.4rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    color: var(--grape);
+    text-shadow: 2px 2px 0 #fff3bf;
+  }
+  .subtitle {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 1.75rem;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.1rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .stat {
+    background: var(--card-bg);
+    border: 3px solid var(--border);
+    border-radius: 16px;
+    padding: 1.1rem 1rem;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.06);
+  }
+  .stat .icon { font-size: 1.8rem; display: block; margin-bottom: 0.15rem; }
+  .stat .value {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--coral);
+  }
+  .stat .label {
+    font-size: 0.85rem;
+    color: var(--ink);
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+  .section-title {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    color: var(--grape);
+    font-size: 1.3rem;
+    margin: 0.5rem 0 1rem;
+    text-align: center;
+  }
+  ul.grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.4rem;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 3px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.06);
+    transition: transform 0.15s ease;
+  }
+  .card:hover { transform: translateY(-3px) rotate(-0.5deg); }
+  .cover-wrap {
+    aspect-ratio: 2 / 3;
+    background: linear-gradient(135deg, #ffe066, #ffb703);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cover-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cover-fallback {
+    color: #8a6d00;
+    font-size: 0.85rem;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  .card-body {
+    padding: 0.75rem 0.9rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    margin: 0 0 0.5rem;
+    min-height: 2.5em;
+    color: var(--ink);
+  }
+  dl.meta {
+    margin: auto 0 0;
+    font-size: 0.8rem;
+    color: #5b6478;
+  }
+  dl.meta div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
+    border-top: 1px dashed var(--border);
+  }
+  dl.meta div:first-child { border-top: none; }
+  dl.meta dt { font-weight: 600; }
+  dl.meta dd { margin: 0; text-align: right; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🌞 Good job on this summer's reading, Tallulah! 🏖️</h1>
+  <p class="subtitle">Here's what you've done this summer</p>
+  <div class="stats">
+    <div class="stat">
+      <span class="icon">📚</span>
+      <div class="value">53</div>
+      <div class="label">Books read</div>
+    </div>
+    <div class="stat">
+      <span class="icon">📖</span>
+      <div class="value">11264</div>
+      <div class="label">Pages read</div>
+    </div>
+    <div class="stat">
+      <span class="icon">☀️</span>
+      <div class="value">0y 1m 28d (58 days total)</div>
+      <div class="label">Of summer reading fun</div>
+    </div>
+  </div>
+</header>
+<main>
+  <p class="section-title">🏆 Your Reading Adventures 🏆</p>
+  <ul class="grid">
+    
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/revolting-rhymes-cinderella.jpg" alt="Cover of Revolting Rhymes: Cinderella" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Revolting Rhymes: Cinderella</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>not applicable</dd></div>
+          <div><dt>Pages</dt><dd>32</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/harry-potter-and-the-prisoner-of-azkaban.webp" alt="Cover of Harry Potter and the Prisoner of Azkaban" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Harry Potter and the Prisoner of Azkaban</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>not applicable</dd></div>
+          <div><dt>Pages</dt><dd>336</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/emma-all-stirred-up.jpg" alt="Cover of Emma all stirred up!" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Emma all stirred up!</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-28</dd></div>
+          <div><dt>Pages</dt><dd>147</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/big-nate-very-funny.jpg" alt="Cover of Big Nate : very funny!" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Big Nate : very funny!</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-28</dd></div>
+          <div><dt>Pages</dt><dd>348</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/dinosaurs-before-dark.jpg" alt="Cover of Dinosaurs before dark" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Dinosaurs before dark</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-28</dd></div>
+          <div><dt>Pages</dt><dd>154</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/fgteev-7-the-big-shrink.jpg" alt="Cover of FGTeev. [7], The big shrink!" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">FGTeev. [7], The big shrink!</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-28</dd></div>
+          <div><dt>Pages</dt><dd>208</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/yokai-cats-3.jpg" alt="Cover of Yokai cats. 3" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Yokai cats. 3</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-28</dd></div>
+          <div><dt>Pages</dt><dd>129</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/secrets-of-the-purple-pearl.jpg" alt="Cover of Secrets of the purple pearl" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Secrets of the purple pearl</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-21</dd></div>
+          <div><dt>Pages</dt><dd>239</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/the-courageous-princess-volume-3-of-3-the-dragon-queen.jpg" alt="Cover of The courageous princess. Volume 3 of 3, The dragon queen" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">The courageous princess. Volume 3 of 3, The dragon queen</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-21</dd></div>
+          <div><dt>Pages</dt><dd>180</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/the-courageous-princess-volume-2-of-3-the-unremembered-lands.jpg" alt="Cover of The courageous princess. Volume 2 of 3, The unremembered lands" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">The courageous princess. Volume 2 of 3, The unremembered lands</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-21</dd></div>
+          <div><dt>Pages</dt><dd>228</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/bubble-trouble.jpg" alt="Cover of Bubble trouble" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Bubble trouble</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>221</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/team-unihorn-and-woolly-2-revenge-of-the-unicorn.jpg" alt="Cover of Team Unihorn and Woolly. #2, Revenge of the unicorn" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Team Unihorn and Woolly. #2, Revenge of the unicorn</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>90</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/dawn-of-the-dino-tooth-fairies.jpg" alt="Cover of Dawn of the dino tooth fairies" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Dawn of the dino tooth fairies</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>92</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/sink-or-swim.jpg" alt="Cover of Sink or swim" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Sink or swim</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>310</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/hotel-transylvania-vol-1-kakieland-katastrophe.jpg" alt="Cover of Hotel Transylvania. Vol.  1 : Kakieland katastrophe" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Hotel Transylvania. Vol.  1 : Kakieland katastrophe</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>64</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/the-courageous-princess-volume-1-of-3-beyond-the-hundred-kin.jpg" alt="Cover of The courageous princess. Volume 1 of 3, Beyond the hundred kingdoms" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">The courageous princess. Volume 1 of 3, Beyond the hundred kingdoms</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>237</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/big-nate-remain-calm.jpg" alt="Cover of Big Nate. Remain calm!" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Big Nate. Remain calm!</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>172</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/goldilocks-wanted-dead-or-alive.jpg" alt="Cover of Goldilocks : wanted dead or alive" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Goldilocks : wanted dead or alive</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>329</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/big-nate-next-stop-superstardom.jpg" alt="Cover of Big Nate. Next stop, superstardom!" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Big Nate. Next stop, superstardom!</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-13</dd></div>
+          <div><dt>Pages</dt><dd>220</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/i-survived-the-black-death-1348.jpg" alt="Cover of I survived the Black Death, 1348" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">I survived the Black Death, 1348</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-10</dd></div>
+          <div><dt>Pages</dt><dd>114</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/fgteev-blasts-off.jpg" alt="Cover of FGTeev blasts off!" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">FGTeev blasts off!</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-03</dd></div>
+          <div><dt>Pages</dt><dd>208</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/mapmakers-and-the-flickering-fortress.jpg" alt="Cover of Mapmakers and the flickering fortress" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Mapmakers and the flickering fortress</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-03</dd></div>
+          <div><dt>Pages</dt><dd>223</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/mapmakers-and-the-enchanted-mountain.jpg" alt="Cover of Mapmakers and the enchanted mountain" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Mapmakers and the enchanted mountain</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-03</dd></div>
+          <div><dt>Pages</dt><dd>225</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/here-and-there.jpg" alt="Cover of Here and there" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Here and there</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-08-03</dd></div>
+          <div><dt>Pages</dt><dd>40</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/unico-3-lost.jpg" alt="Cover of Unico. 3, Lost" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Unico. 3, Lost</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-30</dd></div>
+          <div><dt>Pages</dt><dd>216</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/kiki-s-delivery-service.jpg" alt="Cover of Kiki&#x27;s delivery service" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Kiki&#x27;s delivery service</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-30</dd></div>
+          <div><dt>Pages</dt><dd>193</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/100-cupboards-the-graphic-novel.jpg" alt="Cover of 100 cupboards : the graphic novel" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">100 cupboards : the graphic novel</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-28</dd></div>
+          <div><dt>Pages</dt><dd>240</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/princess-academy-the-graphic-novel.jpg" alt="Cover of Princess academy : the graphic novel" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Princess academy : the graphic novel</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-28</dd></div>
+          <div><dt>Pages</dt><dd>279</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/a-lost-revenge.jpg" alt="Cover of A lost revenge" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">A lost revenge</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>164</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/teen-titans-go-volume-2-welcome-to-the-pizza-dome.jpg" alt="Cover of Teen Titans Go! Volume 2, Welcome to the pizza dome" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Teen Titans Go! Volume 2, Welcome to the pizza dome</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>130</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/mapmakers-and-the-lost-magic.jpg" alt="Cover of Mapmakers and the lost magic" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Mapmakers and the lost magic</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>245</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/crush.jpg" alt="Cover of Crush" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Crush</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>234</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/just-roll-with-it.jpg" alt="Cover of Just roll with it" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Just roll with it</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>318</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/detective-beans-the-case-of-the-missing-hat.jpg" alt="Cover of Detective Beans &amp; the case of the missing hat" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Detective Beans &amp; the case of the missing hat</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>205</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/time-buddies-1.jpg" alt="Cover of Time buddies. 1" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Time buddies. 1</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>149</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/time-buddies-past-present-hooture.jpg" alt="Cover of Time buddies. Past, present, hooture" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Time buddies. Past, present, hooture</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>153</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/fgteev-saves-the-world.jpg" alt="Cover of FGTeeV saves the world!" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">FGTeeV saves the world!</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-17</dd></div>
+          <div><dt>Pages</dt><dd>208</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/if-the-shoe-fits.jpg" alt="Cover of If the shoe fits" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">If the shoe fits</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-10</dd></div>
+          <div><dt>Pages</dt><dd>155</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/witches-of-brooklyn-5-curse-reverse.jpg" alt="Cover of Witches of Brooklyn. 5, Curse &amp; reverse" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Witches of Brooklyn. 5, Curse &amp; reverse</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-10</dd></div>
+          <div><dt>Pages</dt><dd>250</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/adorable-empire-a-graphic-novel.jpg" alt="Cover of Adorable empire : a graphic novel" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Adorable empire : a graphic novel</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-10</dd></div>
+          <div><dt>Pages</dt><dd>224</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/the-lost-hero.jpg" alt="Cover of The lost hero" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">The lost hero</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-10</dd></div>
+          <div><dt>Pages</dt><dd>557</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/s-more-magic.jpg" alt="Cover of S&#x27;more magic" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">S&#x27;more magic</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-10</dd></div>
+          <div><dt>Pages</dt><dd>211</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/witches-of-brooklyn-4-spell-of-a-time.jpg" alt="Cover of Witches of Brooklyn. 4, Spell of a time" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Witches of Brooklyn. 4, Spell of a time</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-10</dd></div>
+          <div><dt>Pages</dt><dd>217</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/tales-from-a-not-so-fabulous-life.jpg" alt="Cover of Tales from a not-so-fabulous life" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Tales from a not-so-fabulous life</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-06</dd></div>
+          <div><dt>Pages</dt><dd>362</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/ghost-boys-the-graphic-novel.jpg" alt="Cover of Ghost boys : the graphic novel" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Ghost boys : the graphic novel</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-06</dd></div>
+          <div><dt>Pages</dt><dd>253</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/stuck.jpg" alt="Cover of Stuck" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Stuck</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-06</dd></div>
+          <div><dt>Pages</dt><dd>209</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/wrong-friend.jpg" alt="Cover of Wrong friend" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Wrong friend</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-06</dd></div>
+          <div><dt>Pages</dt><dd>252</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/truth-or-dare.jpg" alt="Cover of Truth or dare.." loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Truth or dare..</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-06</dd></div>
+          <div><dt>Pages</dt><dd>149</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/unicorn-boy-1.jpg" alt="Cover of Unicorn boy. 1" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Unicorn boy. 1</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-06</dd></div>
+          <div><dt>Pages</dt><dd>203</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/wrath-of-the-triple-goddess.jpg" alt="Cover of Wrath of the triple goddess" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Wrath of the triple goddess</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-06</dd></div>
+          <div><dt>Pages</dt><dd>322</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/the-magical-unicorn-society-official-handbook.jpg" alt="Cover of The Magical Unicorn Society official handbook" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">The Magical Unicorn Society official handbook</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-07-06</dd></div>
+          <div><dt>Pages</dt><dd>120</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/witches-of-brooklyn-2-what-the-hex.jpg" alt="Cover of Witches of Brooklyn. 2, What the hex?!" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Witches of Brooklyn. 2, What the hex?!</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-06-27</dd></div>
+          <div><dt>Pages</dt><dd>220</dd></div>
+        </dl>
+      </div>
+    </li>
+
+    <li class="card">
+      <div class="cover-wrap">
+        <img src="covers/white-fox-in-the-forest.jpg" alt="Cover of White fox in the forest" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cover-fallback" style="display:none;">No cover</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">White fox in the forest</h3>
+        <dl class="meta">
+          <div><dt>Checked out</dt><dd>2026-06-27</dd></div>
+          <div><dt>Pages</dt><dd>280</dd></div>
+        </dl>
+      </div>
+    </li>
+  </ul>
+</main>
+</body>
+</html>
